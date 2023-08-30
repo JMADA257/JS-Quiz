@@ -91,70 +91,93 @@ function checkAnswers(event) {
     //the timer variables text content is equal to the timed score
     timer.textContent = timedScore;
   }
-//increasing the question index by 1 so it will go to the next question
+  //increasing the question index by 1 so it will go to the next question
   questionIndex++;
-  //if the question index comes back as undefined or the timed score is less then or equal to 0 
+  //if the question index comes back as undefined or the timed score is less then or equal to 0
   if (!questions[questionIndex] || timedScore <= 0) {
     //then it will stop the timer
     clearInterval(timerInterval);
-    //clear the quiz pages out so they dont display anything 
+    //clear the quiz pages out so they dont display anything
     quizPageOne.textContent = "";
-    //remove the hidden attribute from the results page so the page will now show up 
+    //remove the hidden attribute from the results page so the page will now show up
     resultsPage.removeAttribute("hidden");
     //otherwise it will replay the display questions loop
   } else displayQuestion();
 }
 
+//setting up a function for the timer!
 function setTime() {
   // Sets interval in variable
   timerInterval = setInterval(function () {
+    //the timed score will subtract by 1 every second
     timedScore--;
+    //the timer text content will be updated with timedscore to show its subtracting every second
     timer.textContent = timedScore;
-
+    //if the timer hits 0 it will run the check answers loop with a null target since check answers is an event function
     if (timedScore === 0) {
       checkAnswers({ target: { id: null } });
     }
+    //time subtracts by 1000ms or 1 second
   }, 1000);
 }
 
+//Adding a function called init
 function init() {
+  //setting up a local variable to have parsed  =  json is a way of storing and transporting data, parse is turning the values of the score and name into a string in local memory
   var storedScores = JSON.parse(localStorage.getItem("hiScores"));
+  //if the variable is null
   if (storedScores !== null) {
     hiScores = storedScores;
   }
 }
-
+//setting up a function called storescores
 function storeScores() {
+  //still kinda confused on both these functions, i kinda stumbled my way through so if the grader could write notes explaining this function and the init function a little more id appreciate it
   localStorage.setItem("hiScores", JSON.stringify(hiScores));
 }
 
 //Event Listeners
+//adding an event listener to the starquiz button for a click event
 startQuiz.addEventListener("click", function () {
+  //making a local variable named homepage which is the page the user fist sees
   var homePage = document.querySelector("section");
+  //basically making the homepage disappear
   homePage.textContent = "";
+  //having quiz page one have the hidden attribute removed so itll pop up on the page
   quizPageOne.removeAttribute("hidden");
+  //putting the timer up in the header so the user can see it
   timer.textContent = timedScore;
+  //running the set time function
   setTime();
+  //running the display question function
   displayQuestion();
 });
 
-//local storage
-
+//adding an event listener for the user to submit there score to highscores
 scores.addEventListener("click", function (event) {
+  //preventing the page from refreshing after clicking
   event.preventDefault();
+  //setting up a variable that tracts what the user will put in the input field for there initials
   var userInitials = document.querySelector("#initials").value;
+  //if the user doesnt put any initials
   if (userInitials === "") {
+    //then the <p> under it will say error
     resultAnswer.textContent = "Error, must have initials or name in box";
   } else {
+    //otheriwse it will say thank you
     resultAnswer.textContent =
       "Thank you! Your record has been saved in the local memory, check it out!";
+    //setting up a object array of current score to put into local memory later consisting of the initials, and score
     currentScore = {
       initials: userInitials,
       points: timedScore,
     };
+    //pushing the hiscores variable into the current score object array
     hiScores.push(currentScore);
   }
+  //running the store scores function
   storeScores();
 });
 
+//when everything else is done it will finally run the init function
 init();
