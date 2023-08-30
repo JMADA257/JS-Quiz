@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Quiz Time</title>
+  </head>
+  <body>
+    <header id="timer"></header>
+    <section>
+      <div>START</div>
+      <a href="./Highscores.html" target="_blank">This is hiscores</a>
+      <button id="start">Click here to start quiz!</button>
+    </section>
+    <div hidden id="question">
+      <h2 id="q">First question goes here</h2>
+      <ul>
+        <li><button id="0">CHOICE</button></li>
+        <li><button id="1">CHOICE</button></li>
+        <li><button id="2">CHOICE</button></li>
+        <li><button id="3">CHOICE</button></li>
+        <h3 id="right-or-wrong"></h3>
+      </ul>
+    </div>
+    <div hidden id="results">
+      <a href="./Highscores.html" target="_blank">This is hiscores</a>
+      Intials!
+      <input type="text" id="initials" />
+      <button id="scores">Click to submit your score to the highscores!</button>
+      <p id="wrong"></p>
+    </div>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
