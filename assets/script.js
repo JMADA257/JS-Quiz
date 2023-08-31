@@ -137,9 +137,9 @@ function storeScores() {
 }
 
 //Event Listeners
-//adding an event listener to the starquiz button for a click event
+//adding an event listener to the startquiz button for a click event
 startQuiz.addEventListener("click", function () {
-  //making a local variable named homepage which is the page the user fist sees
+  //making a local variable named homepage which is the page the user first sees
   var homePage = document.querySelector("section");
   //basically making the homepage disappear
   homePage.textContent = "";

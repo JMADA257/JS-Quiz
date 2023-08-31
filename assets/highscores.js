@@ -1,33 +1,30 @@
-// VARIABLE DECLARATIONS
-var highScores = JSON.parse(localStorage.getItem(hiScores));
-// console.log(highScores);
+// // VARIABLE DECLARATIONS
+var list = document.querySelector("ol");
 
-// var totalScore = localStorage.getItem(storeScores);
-// var list = document.createElement();
+function grabScores() {
+  var storedScores = JSON.parse(localStorage.getItem("hiScores"));
 
-// function setupScores() {
-//   list.textContent = totalScore;
-//   document.body.appendChild(list);
-// }
-// setupScores();
-// FUNCTIONS
+  if (storedScores === null) {
+    return;
+  }
+  for (let i = 0; i < storedScores.length; i++) {
+    storedScores.sort(descendingOrder);
+    var initials = storedScores[i].initials;
+    var score = storedScores[i].points;
+    var li = document.createElement("li");
+    li.textContent = initials + ": " + score;
+    list.appendChild(li);
+  }
+}
 
-// function addElement() {
-//   var newUl = document.createElement("ul");
-//   var newContent = document.createTextNode("I am here");
-//   newUl.appendChild(newContent);
-//   var currentDiv = document.getElementById("#highscoreUl");
-//   document.body.insertBefore(newUl, currentDiv);
-// }
+function descendingOrder(a, b) {
+  if (a.score < b.score) {
+    return 1;
+  }
+  if (a.score > b.score) {
+    return -1;
+  }
+  return 0;
+}
 
-// addElement();
-
-// function descendingOrder(a, b) {
-//   if (a.score < b.score) {
-//     return 1;
-//   }
-//   if (a.score > b.score) {
-//     return -1;
-//   }
-//   return 0;
-// }
+grabScores();
