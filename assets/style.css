@@ -1,10 +1,12 @@
 * {
   text-align: center;
+  background-color: lightgray;
 }
 
 div li button {
   background-color: purple;
   color: white;
+  border-radius: 15px;
   padding: 5px;
   margin: 10px;
   width: 15%;
@@ -15,7 +17,7 @@ ul {
 }
 
 button:hover {
-  box-shadow: 10px 10px 10px rgb(211, 121, 121);
+  box-shadow: 10px 10px 10px black;
 }
 
 #startPage {
@@ -25,6 +27,7 @@ button:hover {
 #start {
   margin: 15px;
   background-color: purple;
+  border-radius: 15px;
   color: white;
 }
 #start:hover {
@@ -47,6 +50,13 @@ button:hover {
 }
 #scores,
 #btnLink,
-#btnLink:visited {
-  background-color: gold;
+#btnLink:visited,
+#btnLink:hover {
+  background-color: purple;
+  border-radius: 15px;
+  color: white;
+  border: 1.5px solid black;
+}
+#btnLink:hover {
+  box-shadow: 10px 10px 10px black;
 }

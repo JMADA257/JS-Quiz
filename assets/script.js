@@ -31,7 +31,7 @@ var resultAnswer = document.querySelector("#answer");
 //setting up an object array that includes the questions, the multiples choices, and the answer
 var questions = [
   {
-    Title: "damn it",
+    Title: "question 1",
     Choices: ["red", "green", "blue", "yellow"],
     answer: 1,
   },
