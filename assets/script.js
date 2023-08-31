@@ -42,11 +42,11 @@ var questions = [
   },
   {
     Title: "Choose the correct heading that will be the largest.",
-    Choices: ["head", "H6", "Footer", "H1"],
+    Choices: ["main", "H6", "Footer", "H1"],
     answer: 3,
   },
   {
-    Title: "Which character indicates an end tag",
+    Title: "Which character indicates an end tag?",
     Choices: [">", "!", "🛑", "|"],
     answer: 0,
   },
@@ -89,7 +89,7 @@ function checkAnswers(event) {
       clearInterval(timerInterval);
     }
     //the timer variables text content is equal to the timed score
-    timer.textContent = timedScore;
+    timer.textContent = "Time left: " + timedScore;
   }
   //increasing the question index by 1 so it will go to the next question
   questionIndex++;
@@ -146,7 +146,7 @@ startQuiz.addEventListener("click", function () {
   //having quiz page one have the hidden attribute removed so itll pop up on the page
   quizPageOne.removeAttribute("hidden");
   //putting the timer up in the header so the user can see it
-  timer.textContent = timedScore;
+  timer.textContent = "Time left: " + timedScore;
   //running the set time function
   setTime();
   //running the display question function
