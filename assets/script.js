@@ -31,24 +31,24 @@ var resultAnswer = document.querySelector("#answer");
 //setting up an object array that includes the questions, the multiples choices, and the answer
 var questions = [
   {
-    Title: "question 1",
-    Choices: ["red", "green", "blue", "yellow"],
+    Title: "What can you use to style the color and effects of a webpage?",
+    Choices: ["Microsoft paint", "CSS", "BSS", "Photoshop"],
     answer: 1,
   },
   {
-    Title: "second-question",
-    Choices: ["red", "green", "blue", "yellow"],
+    Title: "What is a good place to go to if your lost in code?",
+    Choices: ["Down the rabbit hole", "Google", "My proffessor Ben", "DarkWeb"],
     answer: 1,
   },
   {
-    Title: "third-question",
-    Choices: ["red", "green", "blue", "yellow"],
-    answer: 1,
+    Title: "Choose the correct heading that will be the largest.",
+    Choices: ["head", "H6", "Footer", "H1"],
+    answer: 3,
   },
   {
-    Title: "fourth-question",
-    Choices: ["red", "green", "blue", "yellow"],
-    answer: 1,
+    Title: "Which character indicates an end tag",
+    Choices: [">", "!", "🛑", "|"],
+    answer: 0,
   },
 ];
 
