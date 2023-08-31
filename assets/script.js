@@ -31,7 +31,7 @@ var resultAnswer = document.querySelector("#answer");
 //setting up an object array that includes the questions, the multiples choices, and the answer
 var questions = [
   {
-    Title: "first-question",
+    Title: "damn it",
     Choices: ["red", "green", "blue", "yellow"],
     answer: 1,
   },
@@ -51,7 +51,6 @@ var questions = [
     answer: 1,
   },
 ];
-
 
 // Functions
 //this function is used to display the questions in order
@@ -80,7 +79,7 @@ function checkAnswers(event) {
     validate.textContent = "Thats Correct!☑️";
   } else {
     //if not it will display this content instead
-    validate.textContent = "Thats Incorrect!😭";
+    validate.textContent = "Thats Incorrect!😭. Minus 10 Seconds!";
     //it will then subtract x amount of time from the score
     timedScore -= 10;
     //if the score is equal to or less the 0
@@ -113,7 +112,7 @@ function setTime() {
     //the timed score will subtract by 1 every second
     timedScore--;
     //the timer text content will be updated with timedscore to show its subtracting every second
-    timer.textContent = timedScore;
+    timer.textContent = "Time left: " + timedScore;
     //if the timer hits 0 it will run the check answers loop with a null target since check answers is an event function
     if (timedScore === 0) {
       checkAnswers({ target: { id: null } });

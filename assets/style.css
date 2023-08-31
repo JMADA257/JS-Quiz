@@ -1,0 +1,52 @@
+* {
+  text-align: center;
+}
+
+div li button {
+  background-color: purple;
+  color: white;
+  padding: 5px;
+  margin: 10px;
+  width: 15%;
+}
+
+ul {
+  list-style: none;
+}
+
+button:hover {
+  box-shadow: 10px 10px 10px rgb(211, 121, 121);
+}
+
+#startPage {
+  font-size: 40px;
+}
+
+#start {
+  margin: 15px;
+  background-color: purple;
+  color: white;
+}
+#start:hover {
+  box-shadow: 10px 10px 10px black;
+}
+
+#timer {
+  margin: 20px;
+}
+
+#quizSection {
+  padding: 15px;
+  margin: 15px;
+}
+
+#q {
+  text-decoration: underline;
+  font-family: "Cormorant Garamond", serif;
+  font-size: xx-large;
+}
+#scores,
+#btnLink,
+#btnLink:visited {
+  background-color: gold;
+}

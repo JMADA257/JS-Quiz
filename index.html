@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Quiz Time</title>
   </head>
@@ -12,7 +18,10 @@
     </header>
     <section id="quizSection">
       <div id="startPage">Quiz time!!!</div>
-
+      <p>
+        This quest will be about. To start it press this button. Please enjoy
+        and write your name down at the end for high scores!
+      </p>
       <button id="start">Click here to start quiz!</button>
     </section>
     <div hidden id="question">
@@ -26,11 +35,15 @@
       </ul>
     </div>
     <div hidden id="results">
-      <a href="./Highscores.html" target="_blank">This is hiscores</a>
       Intials!
       <input type="text" id="initials" />
       <button id="scores">Click to submit your score to the highscores!</button>
       <p id="answer"></p>
+      <button id="btnLink">
+        <a href="./Highscores.html" target="_blank"
+          >click here to go to the highscores page!</a
+        >
+      </button>
     </div>
     <script src="./assets/script.js"></script>
     <script src="./assets/highscores.js"></script>
