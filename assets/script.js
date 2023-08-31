@@ -52,6 +52,7 @@ var questions = [
   },
 ];
 
+
 // Functions
 //this function is used to display the questions in order
 function displayQuestion() {
