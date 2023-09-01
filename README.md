@@ -42,4 +42,8 @@ Positive comments on how I can do my code better is always helpful!
 Open up the console log so you can see it all! 
 
 ## Links
+[link](https://github.com/JMADA257/JS-Quiz)
+[link](https://jmada257.github.io/JS-Quiz/)
 
+## ScreenShot
+![Screenshot](./assets/Screenshot-of-page.png)
